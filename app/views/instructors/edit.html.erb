@@ -1,2 +1,20 @@
 <h1>Instructors#edit</h1>
 <p>Find me in app/views/instructors/edit.html.erb</p>
+
+
+<%=  form_for @instructor fo |f|  %>
+	<%=  f.label :name  %>
+	<%=  f.text_field :name, value: @instructor.name  %>
+	<%=  f.label :age  %>
+	<%=  f.text_field :age, class: “my_class”, value: @instructor.name  %>
+	<%=  f.submit  %>
+<%=  end  %>
+
+
+
+
+
+<%=  link_to 'Delete', instructor_path(@instructor), method: :delete, confirm: "Are You Sure You Want To Delete #{@instructor.first_name}?"  %>
+
+
+

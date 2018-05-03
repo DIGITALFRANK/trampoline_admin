@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  position: MyString
+  hire_date: 2018-05-03
+  salary: 1
+
+two:
+  position: MyString
+  hire_date: 2018-05-03
+  salary: 1

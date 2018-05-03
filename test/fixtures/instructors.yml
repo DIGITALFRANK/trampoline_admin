@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  expertise: MyString
+  hire_date: 2018-05-03
+  salary: 1
+
+two:
+  expertise: MyString
+  hire_date: 2018-05-03
+  salary: 1
