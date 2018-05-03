@@ -1,0 +1,2 @@
+module InstructorApplicantsHelper
+end
