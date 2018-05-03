@@ -2,14 +2,18 @@
 
 one:
   type: 
+  first_name: MyString
+  last_name: MyString
+  DOB: 2018-05-03
+  edu_level: MyString
   email: MyString
   password: MyString
-  age: 1
-  edu_level: MyString
 
 two:
   type: 
+  first_name: MyString
+  last_name: MyString
+  DOB: 2018-05-03
+  edu_level: MyString
   email: MyString
   password: MyString
-  age: 1
-  edu_level: MyString
