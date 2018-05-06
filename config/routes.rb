@@ -53,12 +53,12 @@ Rails.application.routes.draw do
   resources :cohorts
   resources :applications
 
-  get '/dashboard/admin/:id', to: 'dashboard#admin'
-  get '/dashboard/instructor/:id', to: 'dashboard#admin'
-  get '/dashboard/student/:id', to: 'dashboard#admin'
+  get '/admins/:id/dashboard', to: 'dashboard#admin'
+  get '/instructors/:id/dashboard', to: 'dashboard#admin'
+  get '/students/:id/dashboard', to: 'dashboard#admin'
 
-  get '/application/instructor/:id', to: 'application#instructor'
-  get '/application/student/:id', to: 'application#student'
+  get '/applications/instructors/:id', to: 'application#instructor'
+  get '/applications/students/:id', to: 'application#student'
 
   root 'users#login'
 end
