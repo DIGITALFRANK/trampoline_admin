@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type: 
+  date_started: 2018-05-03 15:57:26
+  finished: false
+  grade: 1
+  PDF_url: MyString
+  student_applicant: one
+  instructor_applicant: one
+
+two:
+  type: 
+  date_started: 2018-05-03 15:57:26
+  finished: false
+  grade: 1
+  PDF_url: MyString
+  student_applicant: two
+  instructor_applicant: two
