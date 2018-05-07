@@ -1,17 +1,23 @@
 class CoursesController < ApplicationController
   def index
+    @courses = Course.all
   end
 
-  def create
+  def show
+    @course = Course.find(params[:id])
+    @couse_admin = Admin.find(@course.admin_id)
   end
 
   def new
   end
 
-  def show
+  def create
   end
 
   def edit
+  end
+
+  def update
   end
 
   def destroy
