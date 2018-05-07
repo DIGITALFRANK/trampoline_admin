@@ -1,17 +1,22 @@
 class InstructorApplicantsController < ApplicationController
   def index
+    @instructor_applicants = InstructorApplicant.all
   end
 
-  def create
+  def show
+    @instructor_applicant = InstructorApplicant.find(params[:id])
   end
 
   def new
   end
 
-  def show
+  def create
   end
 
   def edit
+  end
+
+  def update
   end
 
   def destroy

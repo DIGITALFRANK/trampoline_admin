@@ -63,6 +63,6 @@ Rails.application.routes.draw do
 
 
   root 'users#login'
-  get 'login/error' to: 'users#login_error'
+  # get 'login/error' to: 'users#login_error'
   post '/login/user', to: 'users#dashboard'
 end

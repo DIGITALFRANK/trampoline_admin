@@ -1,0 +1,15 @@
+<h1>StudentApplicants#index</h1>
+<p>Find me in app/views/student_applicants/index.html.erb</p>
+
+</br>
+</br>
+</br>
+
+<ul class="students_list">
+    <%  @student_applicants.each do |student_applicant|  %>
+        <li>
+            <div class="name"><%=  student_applicant.first_name + " " + student_applicant.last_name  %></div>
+            <div class="email"><a href="mailto:<%=  student_applicant.email  %>"><%=  student_applicant.email  %></a></div>
+        </li>
+    <% end %>
+</ul>

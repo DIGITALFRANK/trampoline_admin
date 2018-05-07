@@ -21,7 +21,9 @@
 ### login form post route redirect_to => dashboard, based on user type
 
 
+# 4 - add img_url column to users table - fully configure database tables and colums - what other data might you want to access in a real world scenario
 # 5 - add Ethereum Blockchain Intensive to the list of offered courses 
+
 
 # 6 - applicants and their applications => determine relationship => one to one but between 3 tables => or rather 2 tables, one having subclasses
 # 7 - the actual application - full CRUD, editable, referable, progress savable and savable to PDF
