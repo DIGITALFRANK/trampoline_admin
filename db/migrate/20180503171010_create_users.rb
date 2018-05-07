@@ -1,24 +1,32 @@
-# (done) delete Admin, Instructor, and Student models, and have everything run through the user model / child classes can be accessed
+# (DONE) delete Admin, Instructor, and Student models, and have everything run through the user model / child classes can be accessed
 
-# (done) create courses and cohorts => examine associations
-# (done) determine many to many association btw student users and their cohorts
-# (done) will teachers have a one to one or one to maany association with cohorts? => examine
-# (done) seed and test all relationships > forget applications for now
+# (DONE) create courses and cohorts => examine associations
+# (DONE) determine many to many association btw student users and their cohorts
+# (DONE) will teachers have a one to one or one to maany association with cohorts? => examine
+# (DONE) seed and test all relationships > forget applications for now
 
 
-# *********** (done - config/initializers/user_loading.rb)  make sure to load all users (User.all) on landing in order to be able to access User subclasses eg: Admin, Instructor, Student
+# *********** (DONE) - config/initializers/user_loading.rb)  make sure to load all users (User.all) on landing in order to be able to access User subclasses eg: Admin, Instructor, Student
 
-# examine login routes => determine dashboard routes
+
+# 1 - configure login process => Post route to => User#dashboard with user type filtering and respective dashboard landing
+
+# 2 - examine routes based on user types => limit access accordingly
+# full CRUD - create forms with rails helpers / bootstrap => configure correct index/show new/create edit/update delete/destroy routes and redirects
+
+
+
+# 3 - examine login routes => determine dashboard routes
 ### determine sessions
 ### login form post route redirect_to => dashboard, based on user type
 
-# examine routes based on user types => limit access accordingly
-# full CRUD - create forms with rails helpers / bootstrap => configure correct index/show new/create edit/update delete/destroy routes and redirects
 
-# applicants and their applications => determine relationship => one to one but between 3 tables => or rather 2 tables, one having subclasses
-# the actual application - full CRUD, editable, referable, progress savable and savable to PDF
+# 5 - add Ethereum Blockchain Intensive to the list of offered courses 
 
-# security
+# 6 - applicants and their applications => determine relationship => one to one but between 3 tables => or rather 2 tables, one having subclasses
+# 7 - the actual application - full CRUD, editable, referable, progress savable and savable to PDF
+
+# 8 - security
 ### password security
 ### form validation
 
