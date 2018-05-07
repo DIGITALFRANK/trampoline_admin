@@ -1,15 +1,18 @@
 class InstructorsController < ApplicationController
 
+  def dashboard
+  end
+
   def index
   end
 
-  def create
+  def show
   end
 
   def new
   end
-
-  def show
+  
+  def create
   end
 
   def edit
@@ -34,3 +37,4 @@ class InstructorsController < ApplicationController
 
   end
 end
+
