@@ -1,15 +1,118 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>TrampolineAdmin</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>TrampolineAdmin</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
-    <%= yield %>
-  </body>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Trampoline</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">dashboard <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">profile</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            settings
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">change role</a>
+            <a class="dropdown-item" href="#">change email</a>
+            <a class="dropdown-item" href="#">change password</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">delete account</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">logout</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-9 page_yield">
+        <%= yield %>
+      </div> <%# end col-sm-9 for page yieald %>
+      <div class="col-sm-3">
+        <div class="sidebar">
+          <h6>shortcuts</h6>
+
+          <div class="btn-group-vertical" role="group" aria-label="Button group with nested dropdown">
+
+            <div class="btn-group" role="group">
+              <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                course
+              </button>
+              <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                <a class="dropdown-item" href="#">view all courses</a>
+                <a class="dropdown-item" href="#">create new course</a>
+              </div>
+            </div>
+
+            <div class="btn-group" role="group">
+              <button id="btnGroupDrop2" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                instructors
+              </button>
+              <div class="dropdown-menu" aria-labelledby="btnGroupDrop2">
+                <a class="dropdown-item" href="#">view all instructors</a>
+                <a class="dropdown-item" href="#">create new instructor</a>
+              </div>
+            </div>
+
+            <div class="btn-group" role="group">
+              <button id="btnGroupDrop3" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                students
+              </button>
+              <div class="dropdown-menu" aria-labelledby="btnGroupDrop3">
+                <a class="dropdown-item" href="#">view all students</a>
+                <a class="dropdown-item" href="#">create new student</a>
+              </div>
+            </div>
+
+            <button type="button" class="btn btn-secondary">student applicants</button>
+            <button type="button" class="btn btn-secondary">instructor applicants</button>
+            <button type="button" class="btn btn-secondary">upcoming cohorts</button>
+            <button type="button" class="btn btn-secondary">dashboard</button>
+            <button type="button" class="btn btn-secondary">profile</button>
+
+            <div class="btn-group" role="group">
+              <button id="btnGroupDrop4" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                settings
+              </button>
+              <div class="dropdown-menu" aria-labelledby="btnGroupDrop4">
+                <a class="dropdown-item" href="#">change role</a>
+                <a class="dropdown-item" href="#">change email</a>
+                <a class="dropdown-item" href="#">change password</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">delete account</a>
+              </div>
+            </div>
+
+            <button type="button" class="btn btn-secondary">logout</button>
+          </div> <%# end button group vertical %>
+        </div> <%# end sidebar %>
+      </div> <%# end col-sm-3 for sidebar %>
+    </div> <%# end row %>
+  </div> <%# end container %>
+</body>
 </html>
