@@ -1,2 +1,33 @@
-<h1>Students#edit</h1>
-<p>Find me in app/views/students/edit.html.erb</p>
+
+<h1>update info for your student <span class="student_name"><%= @student.first_name + " " + @student.last_name %></span> </h1>
+
+<%= bootstrap_form_for(@student) do |f| %>
+    <%= f.text_field :img_url, label: "profile img url" %>
+    <%= f.text_field :first_name, label: "first name" %>
+    <%= f.text_field :last_name, label: "last name" %>
+    <%= f.date_field :DOB, label: "date of birth" %>
+    <%= f.text_field :edu_level, label: "education level" %>
+
+    <%= f.email_field :email %>
+    <%= f.password_field :password %>
+
+    <%# this will be hidden and automatically set to the session[:id] (the id of the current Admin user) %>
+    <%= f.number_field :admin_id, label: "admin id" %>
+
+    <%= f.submit "update student info", class: "btn create_btn"%>
+
+    </br>
+    </br>
+
+    <a href="/students/new"><button class="btn btn-primary add_ppl_btn">create new student</button></a>
+
+    </br>
+    </br>
+<% end %>
+
+
+<div class="delete_ppl">
+<%= form_tag("/students/#{params[:id]}", method: "delete") do %>
+<%= submit_tag("delete this student", class: "btn btn-danger delete_ppl_btn") %>
+<% end %>
+</div>

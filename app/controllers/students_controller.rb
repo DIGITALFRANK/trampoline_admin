@@ -13,17 +13,24 @@ class StudentsController < ApplicationController
   end
 
   def create
-    @student = Student.create(user_params)
+    @student = Student.create(student_params)
     redirect_to "/students/#{@student.id}/"
   end
 
   def edit
+    @student = Student.find(params[:id])
   end
 
   def update
+    @student = Student.find(params[:id])
+    @student.update(student_params)
+    redirect_to "/students/#{@student.id}/"
   end
 
   def destroy
+    @student = Student.find(params[:id])
+    @student.destroy
+    redirect_to "/students"
   end
 
 
@@ -31,7 +38,7 @@ class StudentsController < ApplicationController
 
   private
 
-  def user_params
+  def student_params
     params.require(:student).permit(:img_url, :first_name, :last_name, :DOB, :edu_level, :email, :password, :admin_id)
   end
 end

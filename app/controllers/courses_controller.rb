@@ -5,7 +5,7 @@ class CoursesController < ApplicationController
 
   def show
     @course = Course.find(params[:id])
-    @couse_admin = Admin.find(@course.admin_id)
+    @course_admin = Admin.find(@course.admin_id)
   end
 
   def new
