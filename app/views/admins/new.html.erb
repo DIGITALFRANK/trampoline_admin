@@ -2,6 +2,7 @@
 <h1>create a new Admin</h1>
 
 <%= bootstrap_form_for(@admin) do |f| %>
+    <%= f.text_field :img_url, label: "profile img url" %>
     <%= f.text_field :first_name, label: "first name" %>
     <%= f.text_field :last_name, label: "last name" %>
     <%= f.date_field :DOB, label: "date of birth" %>
@@ -13,5 +14,5 @@
     <%= f.email_field :email %>
     <%= f.password_field :password %>
 
-    <%= f.submit "create admin" %>
+    <%= f.submit "create admin", class: "btn create_btn"%>
 <% end %>

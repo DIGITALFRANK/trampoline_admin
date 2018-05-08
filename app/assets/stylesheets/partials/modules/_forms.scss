@@ -1,0 +1,46 @@
+
+#new_admin, #new_instructor, #new_student {
+    margin-top: 25px;
+    margin-left: 50px;
+    input {
+        width: 70%;
+    }
+    label {
+        color: rgb(247, 7, 247);
+    }
+}
+
+#new_course, #new_cohort, .edit_cohort, .edit_course {
+    margin-top: 25px;
+    margin-left: 25px;
+    label {
+        color: rgba(0,0,0, .4);
+    }
+}
+
+.edit_cohort_name, .edit_course_name, .edit_admin_name, .edit_instructor_name, .edit_student_name {
+    color: magenta;
+}
+
+.create_btn {
+    background: rgb(4, 252, 4);
+    color: #fff;
+    &:hover {
+        border: solid 2px rgb(4, 252, 4);
+        background: transparent;
+        color: #000;
+    }
+}
+
+.add_btn {
+    width: 100%;
+}
+
+.delete {
+    padding-right: 25px;
+}
+
+.delete_btn {
+    width: 100%;
+    margin-left: 25px;
+}

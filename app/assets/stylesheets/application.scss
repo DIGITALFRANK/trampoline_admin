@@ -9,3 +9,14 @@
 
 @import "partials/modules/header_nav";
 @import "partials/modules/sidebar";
+@import "partials/modules/forms";
+
+@import "partials/modules/namespaces/users";
+@import "partials/modules/namespaces/admins";
+@import "partials/modules/namespaces/instructors";
+@import "partials/modules/namespaces/students";
+@import "partials/modules/namespaces/courses";
+@import "partials/modules/namespaces/cohorts";
+@import "partials/modules/namespaces/instructor_applicants";
+@import "partials/modules/namespaces/student_applicants";
+@import "partials/modules/namespaces/applications";

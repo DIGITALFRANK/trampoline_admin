@@ -1,2 +1,9 @@
 <h1>Cohorts#index</h1>
 <p>Find me in app/views/cohorts/index.html.erb</p>
+
+<% @cohorts.each do |cohort| %>
+    <h3 class="edit_cohort_name"> <%=  cohort.name  %> </h3>
+    <h6> Starts: <%=  cohort.start_date  %> </h6>
+    <h6> Ends: <%=  cohort.end_date  %> </h6>
+    <h6> Days & Hours: <%=  cohort.days_hours  %> </h6>
+<% end %>

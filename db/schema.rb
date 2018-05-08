@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 2018_05_03_201923) do
   end
 
   create_table "courses", force: :cascade do |t|
+    t.string "img_url"
     t.string "name"
     t.string "subjects"
     t.integer "admin_id"
@@ -56,6 +57,7 @@ ActiveRecord::Schema.define(version: 2018_05_03_201923) do
 
   create_table "users", force: :cascade do |t|
     t.string "type"
+    t.string "img_url"
     t.string "first_name"
     t.string "last_name"
     t.date "DOB"

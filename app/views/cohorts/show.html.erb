@@ -1,2 +1,9 @@
-<h1>Cohorts#show</h1>
-<p>Find me in app/views/cohorts/show.html.erb</p>
+
+<h1 class="edit_cohort_name"> <%=  @cohort.name  %> </h1>
+<h2> Starts: <%=  @cohort.start_date  %> </h2>
+<h2> Ends: <%=  @cohort.end_date  %> </h2>
+<h2> Days & Hours: <%=  @cohort.days_hours  %> </h2>
+</br>
+</br>
+<h3> created by: <span class="admin_name"> <%=  @cohort_admin.first_name  + " " + @cohort_admin.last_name%> </span></h3>
+<h3> taught by: <span class="instructor_name"> <%=  @cohort_instructor.first_name  + " " + @cohort_instructor.last_name%> </span></h3>

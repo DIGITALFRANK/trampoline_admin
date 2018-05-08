@@ -1,2 +1,17 @@
-<h1>Students#new</h1>
-<p>Find me in app/views/students/new.html.erb</p>
+<h1>create a new Student</h1>
+
+<%= bootstrap_form_for(@student) do |f| %>
+    <%= f.text_field :img_url, label: "profile img url" %>
+    <%= f.text_field :first_name, label: "first name" %>
+    <%= f.text_field :last_name, label: "last name" %>
+    <%= f.date_field :DOB, label: "date of birth" %>
+    <%= f.text_field :edu_level, label: "education level" %>
+
+    <%= f.email_field :email %>
+    <%= f.password_field :password %>
+
+    <%# this will be hidden and automatically set to the session[:id] (the id of the current Admin user) %>
+    <%= f.number_field :admin_id, label: "admin id" %>
+
+    <%= f.submit "create student", class: "btn create_btn"%>
+<% end %>
