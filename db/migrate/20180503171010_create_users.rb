@@ -10,8 +10,12 @@
 
 
 
+# (DONE) - full CRUD - create forms with rails helpers / bootstrap => configure correct index/show new/create edit/update delete/destroy routes and redirects
+
+
+
+
 # 1 - examine routes based on user types => limit access accordingly - build respective templates => make sure respective *layout* is properly configured 
-# full CRUD - create forms with rails helpers / bootstrap => configure correct index/show new/create edit/update delete/destroy routes and redirects
 
 
 # 2 - implement Devise gem for User Authentication
@@ -35,6 +39,10 @@
 # 9 - security
 ### password security
 ### form validation - all fields required - email & password validation
+
+
+# 10 -  prrrretty it up!  Sass - JS animations - warnings?
+
 
 
 

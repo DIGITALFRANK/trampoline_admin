@@ -22,17 +22,19 @@ class InstructorsController < ApplicationController
   end
 
   def edit
-    @instructor = Instructor.new
+    @instructor = Instructor.find(params[:id])
   end
 
   def update
     @instructor = Instructor.find(params[id])
     @instructor.update(user_params)
-    redirect_to "/instructor/#{params[id]}"
+    redirect_to "/instructors/#{params[id]}"
   end
 
   def destroy
-    Instructor.destroy(Instructor.params[id])
+    @instructor = Instructor.find(params[:id])
+    @instructor.destroy
+    redirect_to "/instructors"
   end
 
 

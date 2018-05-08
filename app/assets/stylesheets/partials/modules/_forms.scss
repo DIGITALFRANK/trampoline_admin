@@ -1,5 +1,5 @@
 
-#new_admin, #new_instructor, #new_student {
+#new_admin, #new_instructor, #new_student, .edit_admin, .edit_instructor, .edit_student {
     margin-top: 25px;
     margin-left: 50px;
     input {
@@ -36,6 +36,10 @@
     width: 100%;
 }
 
+.add_ppl_btn {
+    width: 70%;
+}
+
 .delete {
     padding-right: 25px;
 }
@@ -43,4 +47,13 @@
 .delete_btn {
     width: 100%;
     margin-left: 25px;
+}
+
+.delete_ppl {
+    padding-right: 50px;
+}
+
+.delete_ppl_btn {
+    width: 70%;
+    margin-left: 50px;
 }
