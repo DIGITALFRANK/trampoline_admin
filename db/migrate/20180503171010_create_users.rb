@@ -14,22 +14,27 @@
 # full CRUD - create forms with rails helpers / bootstrap => configure correct index/show new/create edit/update delete/destroy routes and redirects
 
 
-# 2 - configure login process => Post route to => User#dashboard with user type filtering and respective dashboard landing
-# 3 - examine login routes => determine dashboard routes
+# 2 - implement Devise gem for User Authentication
+# 3 - configure login process => Post route to => User#dashboard with user type filtering and respective dashboard landing
+# 4 - examine login routes => determine dashboard routes
 ### determine sessions
 ### login form post route redirect_to => dashboard, based on user type
 
 
-# 4 - add img_url column to users table - fully configure database tables and colums - what other data might you want to access in a real world scenario
-# 5 - add Ethereum Blockchain Intensive to the list of offered courses 
+# 5 - add img_url column to users table - fully configure database tables and colums - what other data might you want to access in a real world scenario
+# 6 - add Ethereum Blockchain Intensive to the list of offered courses 
 
+# **** how do admins assign students to cohorts? search student by first_name, search student by last_name - assign to cohort by id - edit join cohorts_students table
+# **** admins should have this ability from their dashboard, as well as at cohorts/show pages
 
-# 6 - applicants and their applications => determine relationship => one to one but between 3 tables => or rather 2 tables, one having subclasses
-# 7 - the actual application - full CRUD, editable, referable, progress savable and savable to PDF
+### - add "apply now" link button to /users/login route that takes you to the create applicant form - restrict the type field to "InstructorApplicant" or "StudentApplicant"  
+### - applicants are not created by admins, they create themselves as they apply - and bind themselves to a new application that is also simulteanously created
+# 7 - applicants and their applications => determine relationship => one to one but between 3 tables => or rather 2 tables, one having subclasses
+# 8 - the actual application - full CRUD, editable, referable, progress savable and savable to PDF
 
-# 8 - security
+# 9 - security
 ### password security
-### form validation
+### form validation - all fields required - email & password validation
 
 
 
@@ -37,6 +42,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
   def change
     create_table :users do |t|
       t.string :type
+      t.string :img_url
       t.string :first_name
       t.string :last_name
       t.date :DOB

@@ -21,4 +21,13 @@ class StudentApplicantsController < ApplicationController
 
   def destroy
   end
+
+
+
+
+  private
+
+  def user_params
+    params.require(:student_applicant).permit(:img_url, :first_name, :last_name, :DOB, :edu_level, :email, :password, :admin_id)
+  end
 end

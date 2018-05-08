@@ -13,6 +13,7 @@ class InstructorsController < ApplicationController
   end
 
   def new
+    @instructor = Instructor.new
   end
   
   def create
@@ -26,7 +27,7 @@ class InstructorsController < ApplicationController
 
   def update
     @instructor = Instructor.find(params[id])
-    @instructor.update(instructor_params)
+    @instructor.update(user_params)
     redirect_to "/instructor/#{params[id]}"
   end
 
@@ -40,7 +41,7 @@ class InstructorsController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :DOB, :edu_level, :position, :hire_date, :salary, :email, :password)
+    params.require(:instructor).permit(:img_url, :first_name, :last_name, :DOB, :edu_level, :expertise, :position, :hire_date, :salary, :email, :password, :admin_id)
   end
 end
 

@@ -1,2 +1,25 @@
-<h1>Courses#edit</h1>
-<p>Find me in app/views/courses/edit.html.erb</p>
+<h1>update <span class="edit_course_name"><%= @course.name %></span></h1>
+
+<%= bootstrap_form_for(@course) do |f| %>
+    <%= f.text_field :img_url, label: "profile img url" %>
+    <%= f.text_field :name, label: "course name" %>
+    <%= f.text_field :subjects, label: "course subjects" %>
+
+    <%# this will be hidden and automatically set to the session[:id] (the id of the current Admin user) %>
+    <%= f.number_field :admin_id, label: "admin id" %>
+
+    <%= f.submit "update course", class: "btn create_btn"%>
+    </br>
+    </br>
+
+    <a href="#"><button class="btn btn-primary add_btn">create new cohorts</button></a>
+
+    </br>
+    </br>
+<% end %>
+
+<div class="delete">
+<%= form_tag("/cohorts/#{params[:id]}", method: "delete") do %>
+<%= submit_tag("delete this course", class: "btn btn-danger delete_btn") %>
+<% end %>
+</div>
