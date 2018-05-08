@@ -9,13 +9,12 @@
 # *********** (DONE) - config/initializers/user_loading.rb)  make sure to load all users (User.all) on landing in order to be able to access User subclasses eg: Admin, Instructor, Student
 
 
-# 1 - configure login process => Post route to => User#dashboard with user type filtering and respective dashboard landing
 
-# 2 - examine routes based on user types => limit access accordingly
+# 1 - examine routes based on user types => limit access accordingly - build respective templates => make sure respective *layout* is properly configured 
 # full CRUD - create forms with rails helpers / bootstrap => configure correct index/show new/create edit/update delete/destroy routes and redirects
 
 
-
+# 2 - configure login process => Post route to => User#dashboard with user type filtering and respective dashboard landing
 # 3 - examine login routes => determine dashboard routes
 ### determine sessions
 ### login form post route redirect_to => dashboard, based on user type
