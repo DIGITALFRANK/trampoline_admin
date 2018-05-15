@@ -13,7 +13,9 @@
 # (DONE) - full CRUD - create forms with rails helpers / bootstrap => configure correct index/show new/create edit/update delete/destroy routes and redirects
 
 
-
+# **** A$$$AP - make all CRUD ajax - implement js.erb views  -  app with as much AJAX functionality as possible
+# --- duplicate functionality for index lists? how does this work, do we get a pop up modal for edit?
+# --- pop up modal can be closed (changes unsaved) or when "update" info button is clicked, AJAX 'post' call (remote: true on the button link) to update database & redisplay
 
 # 1 - examine routes based on user types => limit access accordingly - build respective templates => make sure respective *layout* is properly configured 
 

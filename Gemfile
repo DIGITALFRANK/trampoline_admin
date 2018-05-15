@@ -18,13 +18,16 @@ gem 'uglifier', '>= 1.3.0'
 
 
 
-
+# Devise gem for Authentication
+gem 'devise'
+# bootstrap sass - please find out more about what this does
+# gem 'bootstrap-sass'
 # jQuery
 gem 'jquery-rails'
-
+# jQuery turbo links
+gem 'jquery-turbolinks'
 # bootstrap
 gem 'bootstrap', '~> 4.1.1'
-
 # bootstrap form helper
 gem "bootstrap_form", git: "https://github.com/bootstrap-ruby/bootstrap_form.git", branch: "master"
 

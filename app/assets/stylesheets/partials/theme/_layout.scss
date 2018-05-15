@@ -1,8 +1,29 @@
 
+.i {
+    display: none;
+}
+
 .container-fluid {
     padding: 50px 35px 100px 25px;
 }
 
 .page_yield {
     padding: 25px;
+}
+
+#login {
+    padding: 25px 50px;
+    padding-top: 75px;
+    background: #ffeaab;
+    border-radius: 15px;
+    .login_input {
+        width: 50%;
+    }
+}
+
+.cancel_account {
+    margin-top: 75px;
+    background: pink;
+    padding: 25px;
+    border-radius: 2px;
 }

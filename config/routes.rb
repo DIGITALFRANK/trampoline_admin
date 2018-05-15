@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   # get 'applications/index'
   # get 'applications/create'
   # get 'applications/new'
@@ -54,12 +55,26 @@ Rails.application.routes.draw do
   resources :cohorts
   resources :applications
 
+
+  devise_for :admins
+  devise_for :instructors
+  devise_for :students
+  devise_for :instructor_applicants
+  devise_for :student_applicants
+
+
   get '/admins/:id/dashboard', to: 'admins#dashboard'
   get '/instructors/:id/dashboard', to: 'instructors#dashboard'
   get '/students/:id/dashboard', to: 'students#dashboard'
 
   get '/applications/instructors/:id', to: 'applications#instructor'
   get '/applications/students/:id', to: 'applications#student'
+
+
+  #### we can add root to: "dashboard#index" within the dashboard namespace
+  # namespace :dashboard do
+  #   root to: "dashboard#index"
+  # end
 
 
   root 'users#login'

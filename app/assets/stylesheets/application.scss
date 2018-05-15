@@ -3,13 +3,13 @@
 @import "bootstrap";
 @import 'rails_bootstrap_forms';
 
-
 @import "partials/theme/layout";
 @import "partials/theme/typography";
 
-@import "partials/modules/header_nav";
+@import "partials/modules/nav";
 @import "partials/modules/sidebar";
 @import "partials/modules/forms";
+@import "partials/modules/buttons   ";
 
 @import "partials/modules/namespaces/users";
 @import "partials/modules/namespaces/admins";
