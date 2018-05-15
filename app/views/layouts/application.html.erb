@@ -10,7 +10,7 @@
 </head>
 
 <body>
-
+<%#################################### top nav #################################### %>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">Trampoline</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -19,40 +19,81 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">dashboard <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">profile</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            settings
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">change role</a>
-            <a class="dropdown-item" href="#">change email</a>
-            <a class="dropdown-item" href="#">change password</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">delete account</a>
-          </div>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">logout</a>
-        </li>
+
+
+
+        <% if user_signed_in? %>
+
+          <li class="dropdown">
+            <a id="userDropdown" class="dropdown-toggle" data-toggle="dropdown" href="#">
+              <%= current_user.first_name %>
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="userDropdown">
+              <li><%= link_to 'Dashboard', edit_user_registration_path, :class => 'nav-link' %></li>
+              <li><%= link_to 'Profile', edit_user_registration_path, :class => 'nav-link' %></li>
+              <div class="dropdown-divider"></div>
+              <li><%= link_to 'Log out', destroy_user_session_path, method: :delete, :class => 'nav-link'%></li>
+            </ul>
+          </li>
+
+        <% else %>
+
+          <ul id="nav_buttons" class="navbar-nav mr-auto">
+            <li class="nav-item">
+
+              <%#= link_to "sign in", new_session_path(resource_name), :class => "nav-link btn btn-warning btn-sm" %>
+
+              <a class="nav-link btn btn-warning btn-sm" href="/users/sign_in">sign in</a>
+
+
+
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle btn btn-primary btn-sm" href="#" id="applyDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                apply as
+              </a>
+              <div class="dropdown-menu" aria-labelledby="applyDropdown">
+                <a class="dropdown-item" href="#">Student</a>
+                <div class="dropdown-divider"></div>
+                <%= link_to 'Instructor', new_user_registration_path, class: 'dropdown-item' %>
+              </div>
+            </li>
+          </ul>
+
+        <% end %>
+
+
+
+      
       </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      <form id="search_form" class="form-inline my-2 my-lg-0">
+        <input id="search_box" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-sm btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
       </form>
     </div>
   </nav>
+<%#################################### end top nav #################################### %>
+
+<%# Devise alerts... do I need something for Devise notices? %>
+  <div class="alerts">
+    <% flash.each do |key, value| %>
+      <div class="alert alert-<%= key %>">
+        <%= value %>
+      </div>
+    <% end %>
+  </div>
+
+  <%= yield :top_content %>
 
   <div class="container-fluid">
     <div class="row">
+    <%#################################### page content #################################### %>
       <div class="col-sm-9 page_yield">
+        <h1><%= yield :header %></h1>
         <%= yield %>
       </div> <%# end col-sm-9 for page yieald %>
+    <%#################################### end page content #################################### %>
       <div class="col-sm-3">
         <div class="sidebar">
           <h6>shortcuts</h6>
@@ -60,7 +101,7 @@
           <div class="btn-group-vertical" role="group" aria-label="Button group with nested dropdown">
 
             <div class="btn-group" role="group">
-              <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <button id="btnGroupDrop1" type="button" role="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 courses
               </button>
               <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
@@ -70,30 +111,30 @@
             </div>
 
             <div class="btn-group" role="group">
-              <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <button id="btnGroupDrop2" type="button" role="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 admins
               </button>
-              <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+              <div class="dropdown-menu" aria-labelledby="btnGroupDrop2">
                 <a class="dropdown-item" href="#">view all admins</a>
                 <a class="dropdown-item" href="#">create new admin</a>
               </div>
             </div>
 
             <div class="btn-group" role="group">
-              <button id="btnGroupDrop2" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <button id="btnGroupDrop3" type="button" role="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 instructors
               </button>
-              <div class="dropdown-menu" aria-labelledby="btnGroupDrop2">
+              <div class="dropdown-menu" aria-labelledby="btnGroupDrop3">
                 <a class="dropdown-item" href="#">view all instructors</a>
                 <a class="dropdown-item" href="#">create new instructor</a>
               </div>
             </div>
 
             <div class="btn-group" role="group">
-              <button id="btnGroupDrop3" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <button id="btnGroupDrop4" type="button" role="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 students
               </button>
-              <div class="dropdown-menu" aria-labelledby="btnGroupDrop3">
+              <div class="dropdown-menu" aria-labelledby="btnGroupDrop4">
                 <a class="dropdown-item" href="#">view all students</a>
                 <a class="dropdown-item" href="#">create new student</a>
                 <a class="dropdown-item" href="#">assign students to cohorts</a>
@@ -107,10 +148,10 @@
             <button type="button" class="btn btn-secondary">profile</button>
 
             <div class="btn-group" role="group">
-              <button id="btnGroupDrop4" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <button id="btnGroupDrop5" type="button" role="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 settings
               </button>
-              <div class="dropdown-menu" aria-labelledby="btnGroupDrop4">
+              <div class="dropdown-menu" aria-labelledby="btnGroupDrop5">
                 <a class="dropdown-item" href="#">change role</a>
                 <a class="dropdown-item" href="#">change email</a>
                 <a class="dropdown-item" href="#">change password</a>

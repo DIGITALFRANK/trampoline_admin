@@ -2,3 +2,11 @@
 .student_name {
     color: rgb(248, 116, 60);
 }
+
+.students_table {
+    .student {
+        &:hover {
+            background: rgba(255, 164, 194, .2);
+        }
+    }
+}

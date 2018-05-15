@@ -1,0 +1,68 @@
+
+// Devise messages
+.alerts {
+    text-align: center;
+}
+
+.alert-alert {
+    @extend .alert-warning;
+    margin-bottom: 0px;
+  }
+  
+.alert-notice {
+    @extend .alert-info;
+    margin-bottom: 0px; 
+}
+
+// #warnings {
+//     @extend .alert-danger;
+// }
+
+// Devise Error Message (explanation title)
+#error_explanation {
+    @extend .alert-danger;
+    padding: 25px;
+    padding-bottom: 5px;
+    margin-bottom: 25px;
+    border-radius: 5px;
+    h2 {
+        display: none;
+    }
+}
+
+#devise_shared_links {
+    margin-top: 50px;
+    margin-left: 25px;
+    text-align: center;
+    a {
+        font-size: .75em;
+        font-weight: bold;
+        color: red;
+        display: inline;
+        margin-right: 25px;
+        &:hover {
+            color: firebrick;
+        }
+    }
+}
+
+.signin_link {
+    color: #4444ff;
+    &:hover {
+        color: aqua;
+    }
+}
+
+.help-block {
+    display: block;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    font-size: .75em;
+    color: #4444ff;
+}
+
+.delete-acc-help-block {
+    color: #666;
+}
+
+

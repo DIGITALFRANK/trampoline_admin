@@ -2,6 +2,8 @@
 <h1>update info for your student <span class="student_name"><%= @student.first_name + " " + @student.last_name %></span> </h1>
 
 <%= bootstrap_form_for(@student) do |f| %>
+<%#= bootstrap_form_for(@student, remote: true, html: { method: :put }) do |f| %>
+
     <%= f.text_field :img_url, label: "profile img url" %>
     <%= f.text_field :first_name, label: "first name" %>
     <%= f.text_field :last_name, label: "last name" %>
@@ -31,3 +33,6 @@
 <%= submit_tag("delete this student", class: "btn btn-danger delete_ppl_btn") %>
 <% end %>
 </div>
+</br>
+</br>
+<%= link_to "<< back", :back, class: 'btn btn-default btn-sm' %>

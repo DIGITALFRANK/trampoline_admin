@@ -28,9 +28,9 @@ class AdminsController < ApplicationController
   end
 
   def update
-    @admin = Admin.find(params[id])
+    @admin = Admin.find(params[:id])
     @admin.update(admin_params)
-    redirect_to "/admins/#{params[id]}"
+    redirect_to "/admins/#{params[:id]}"
   end
 
   def destroy
