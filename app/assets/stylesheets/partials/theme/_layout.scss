@@ -3,6 +3,21 @@
     display: none;
 }
 
+#landing {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgb(195, 2, 248);
+    margin-top: 50px;
+    overflow: hidden;
+}
+
+#landing_hero {
+    z-index: 10000;
+}
+
 .container-fluid {
     padding: 50px 35px 100px 25px;
 }

@@ -39,7 +39,7 @@ class Students::RegistrationsController < Devise::RegistrationsController
 
   def create
     super
-    @student = Student.create(student_params)
+    @student = Student.create(configure_sign_up_params)
     redirect_to "/students/#{@student.id}/"
   end
 
@@ -51,7 +51,7 @@ class Students::RegistrationsController < Devise::RegistrationsController
   def update
     super
     @student = Student.find(params[:id])
-    @student.update(student_params)
+    @student.update(configure_account_update_params)
     redirect_to "/students/#{@student.id}/"
   end
 

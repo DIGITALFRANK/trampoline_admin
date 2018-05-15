@@ -1,10 +1,15 @@
-
-<% content_for :top_content do %>
-  <div class="jumbotron">
-    <div class="container">
-      <h1>Welcome! Trampoline loves it when you jump in.</h1>
-      <p>please sign in or register to get started</p>
-
+<div id="landing">
+  <%# content_for :top_content do %>
+    <div id="landing_hero">
+      <div class="jumbotron">
+        <div class="container">
+          <h1>Welcome! Trampoline loves it when you jump in.</h1>
+          <p>please login or start a new application</p>
+        </div>
+      </div>
     </div>
+  <%# end %>
+  <div id="landing_img">
+    <%= image_tag("landing/trampoline_landing.jpg") %>
   </div>
-<% end %>
+</div>

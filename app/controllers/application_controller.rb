@@ -1,6 +1,10 @@
 class ApplicationController < ActionController::Base
     before_action :configure_permitted_parameters, if: :devise_controller?
 
+    devise_group :user, contains: [:admin, :instructor, :student, :instructor_applicant, :student_applicant]
+
+
+
     protected
 
     def configure_permitted_parameters
@@ -10,4 +14,3 @@ class ApplicationController < ActionController::Base
 end
 
 
-# User.all
