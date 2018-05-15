@@ -1,66 +1,46 @@
 Rails.application.routes.draw do
-  devise_for :users
-  # get 'applications/index'
-  # get 'applications/create'
-  # get 'applications/new'
-  # get 'applications/show'
-  # get 'applications/edit'
-  # get 'applications/destroy'
-  # get 'cohorts/index'
-  # get 'cohorts/create'
-  # get 'cohorts/new'
-  # get 'cohorts/show'
-  # get 'cohorts/edit'
-  # get 'cohorts/destroy'
-  # get 'courses/index'
-  # get 'courses/create'
-  # get 'courses/new'
-  # get 'courses/show'
-  # get 'courses/edit'
-  # get 'courses/destroy'
-  # get 'student_applicants/index'
-  # get 'student_applicants/create'
-  # get 'student_applicants/new'
-  # get 'student_applicants/show'
-  # get 'student_applicants/edit'
-  # get 'student_applicants/destroy'
-  # get 'instructor_applicants/index'
-  # get 'instructor_applicants/create'
-  # get 'instructor_applicants/new'
-  # get 'instructor_applicants/show'
-  # get 'instructor_applicants/edit'
-  # get 'instructor_applicants/destroy'
-  # get 'students/index'
-  # get 'students/create'
-  # get 'students/new'
-  # get 'students/show'
-  # get 'students/edit'
-  # get 'students/destroy'
-  # get 'instructors/index'
-  # get 'instructors/create'
-  # get 'instructors/new'
-  # get 'instructors/show'
-  # get 'instructors/edit'
-  # get 'instructors/destroy'
-  # get 'admins/index'
-  # get 'admins/show'
+  # devise_for :users
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resources :admins
-  resources :instructors
-  resources :students
-  resources :instructor_applicants
-  resources :student_applicants
-  resources :users
+  # resources :admins
+  # resources :instructors
+  # resources :students
+  # resources :instructor_applicants
+  # resources :student_applicants
+  # resources :users
+
+  # resources
   resources :courses
   resources :cohorts
   resources :applications
 
 
+  # Devise for users
   devise_for :admins
   devise_for :instructors
   devise_for :students
   devise_for :instructor_applicants
   devise_for :student_applicants
+
+
+  # index & show for users
+  get '/admins', to: 'admins#index'
+  get '/admins/:id/show', to: 'admins#show'
+
+  get '/instructors', to: 'instructors#index'
+  get '/instructors/:id/show', to: 'instructors#show'
+
+  get '/students', to: 'students#index'
+  get '/students/:id/show', to: 'students#show'
+  
+  get '/instructor_applicants', to: 'instructor_applicants#index'
+  get '/instructor_applicants/:id/show', to: 'instructor_applicants#show'
+
+  get '/student_applicants', to: 'student_applicants#index'
+  get '/student_applicants/:id/show', to: 'student_applicants#show'
+
+
+
 
 
   get '/admins/:id/dashboard', to: 'admins#dashboard'
@@ -71,13 +51,59 @@ Rails.application.routes.draw do
   get '/applications/students/:id', to: 'applications#student'
 
 
-  #### we can add root to: "dashboard#index" within the dashboard namespace
+  root 'users#login'
+
+
+
+
+
+
+  
+  # dashboard routes W/ user restrictions
+  #### BEST ROUTE - or we can run everythng through the dashboard namespace, with restrictions applied by user type
+  # namespace :dashboard do
+  #   authenticated :admin do
+  #     resources :admins, module: "admin"
+  #     resources :instructors, module: "admin"
+  #     resources :students, module: "admin"
+  #     resources :instructor_applicants, module: "admin"
+  #     resources :student_applicants, module: "admin"
+  #     resources :users, module: "admin"
+  #     resources :courses, module: "admin"
+  #     resources :cohorts, module: "admin"
+  #     resources :applications, module: "admin"
+  #   end
+  #   authenticated :instructor do
+  #     resources :courses, module: "instructor", :only => [:show, :index]
+  #     resources :cohorts, module: "instructor", :only => [:show, :index]
+  #     resources :admins, module: "instructor", :only => [:show, :index]
+  #     resources :students, module: "instructor", :only => [:show, :index]
+  #   end
+  #   authenticated :student do
+  #     resources :courses, module: "student", :only => [:show, :index]
+  #     resources :cohorts, module: "student", :only => [:show, :index]
+  #     resources :admins, module: "student", :only => [:show, :index]
+  #     resources :instructors, module: "student", :only => [:show, :index]
+  #   end
+  #   authenticated :instructor_applicant do
+  #     resources :applications, module: "instructor_applicant", :only => [:show, :new, :create, :edit, :update, :destroy]
+  #   end
+  #   authenticated :student_applicant do
+  #     resources :applications, module: "student_applicant", :only => [:show, :new, :create, :edit, :update, :destroy]
+  #   end
+  #   root to: "dashboard#index"
+  # end
+
+
+
+
+
+  #### we could add root to: "dashboard#index" within the dashboard namespace
   # namespace :dashboard do
   #   root to: "dashboard#index"
   # end
 
 
-  root 'users#login'
-  # get 'login/error' to: 'users#login_error'
-  post '/login/user', to: 'users#dashboard'
+
+
 end

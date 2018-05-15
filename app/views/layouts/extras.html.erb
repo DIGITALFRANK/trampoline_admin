@@ -1,0 +1,46 @@
+
+
+<%# log out proper Devise user %>
+<% if admin_signed_in? %>
+    <li><%= link_to 'Log out', destroy_admin_session_path, method: :delete %></li>
+<% end %>
+<% if instructor_signed_in? %>
+    <li><%= link_to 'Log out', destroy_instructor_session_path, method: :delete %></li>
+<% end %>
+<% if student_signed_in? %>
+    <li><%= link_to 'Log out', destroy_student_session_path, method: :delete %></li>
+<% end %>
+<% if instructor_applicant_signed_in? %>
+    <li><%= link_to 'Log out', destroy_instructor_applicant_session_path, method: :delete %></li>
+<% end %>
+<% if student_applicant_signed_in? %>
+    <li><%= link_to 'Log out', destroy_student_applicant_session_path, method: :delete %></li>
+<% end %>
+
+
+
+<%# extras - if statements - sidebar nav based on User Type - Admin, Instructor, Student, Instructor Applicant, Student Applican %>
+<% if admin_signed_in? %>
+    <div class="sidebar">
+        <%# code for admin sidebar %>
+    </div>
+<% end %>
+<% if instructor_signed_in? %>
+    <div class="sidebar">
+        <%# code for instuctor sidebar %>
+    </div><% end %>
+<% if student_signed_in? %>
+    <div class="sidebar">
+        <%# code for student sidebar %>
+    </div>
+<% end %>
+<% if instructor_applicant_signed_in? %>
+    <div class="sidebar">
+        <%# code for instructor_applicant sidebar %>
+    </div>
+<% end %>
+<% if student_applicant_signed_in? %>
+    <div class="sidebar">
+        <%# code for student_applicant sidebar %>
+    </div>
+<% end %>
