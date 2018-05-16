@@ -36,8 +36,8 @@
     text-align: center;
     a {
         font-size: .75em;
-        font-weight: bold;
-        color: red;
+        // font-weight: bold;
+        color: blue;
         display: inline;
         margin-right: 25px;
         &:hover {
@@ -51,6 +51,13 @@
     &:hover {
         color: aqua;
     }
+}
+
+.login_tip {
+    margin-left: 25px;
+    font-size: .5em;
+    font-weight: lighter;
+    opacity: .5;
 }
 
 .help-block {
