@@ -1,5 +1,5 @@
 <div id="login">
-  <h2>Log in</h2>
+  <h2>Log in <span class="login_tip">be sure to login as the right user type, look above ^</span></h2>
   
   <%= bootstrap_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "login_input" %>

@@ -6,6 +6,8 @@
 @import "partials/theme/layout";
 @import "partials/theme/typography";
 
+@import "partials/modules/header";
+@import "partials/modules/footer";
 @import "partials/modules/nav";
 @import "partials/modules/sidebars";
 @import "partials/modules/forms";
@@ -13,6 +15,7 @@
 @import "partials/modules/imgs";
 
 @import "partials/modules/namespaces/users";
+@import "partials/modules/namespaces/dashboard";
 @import "partials/modules/namespaces/admins";
 @import "partials/modules/namespaces/instructors";
 @import "partials/modules/namespaces/students";

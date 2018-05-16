@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+    skip_before_action :authenticate_user!, :only => [:login]
     
     def login 
         puts "I just hit the landing/login page"

@@ -1,0 +1,100 @@
+
+
+.dashboard {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.dashboard_box {
+    width: 30%;
+    height: 200px;
+    border-radius: 5px;
+    margin: 10px;
+    margin-bottom: 25px; 
+    position: relative;
+    filter:drop-shadow(5px 5px 10px #999);
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+
+    // &:hover {
+    //     opacity: .6;
+    // }
+}
+
+.applications_box {
+    background: #999;
+}
+
+.courses_box {
+    background: rgb(55, 247, 2);
+}
+
+.cohorts_box {
+    background: rgb(253, 199, 3);
+}
+
+.admins_box {
+    background: rgb(253, 170, 74);
+}
+
+.instructors_box {
+    background: rgb(130, 141, 238);
+}
+
+.students_box {
+    background: violet;
+}
+
+.student_applicants_box {
+    background: rgb(196, 133, 103);
+}
+
+.instructor_applicants_box {
+    background: rgb(1, 219, 187);
+}
+
+
+
+
+.dashboard_resource {
+    padding: 15px;
+}
+
+.dashboard_resource:hover {
+    font-size: 1.5em;
+    transition: .3s ease;
+    text-decoration: none;
+}
+
+.dashboard_resource {
+    // font-size: 2em;
+    color: #fff;
+}
+
+.create_new {
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    background: transparent;
+    text-align: center;
+    font-size: 3em; 
+
+    position: absolute;
+    bottom: -25px;
+    right: 40%;
+
+    &:hover {
+        background: gold;
+        text-decoration: none;
+        color: #000;
+        transition: .3s ease;
+    }
+
+    div {
+        transform: translateY(-13px);
+    }
+}
