@@ -20,3 +20,6 @@ end
 
 # add subfolders to models autoload path
 # config.autoload_paths += Dir[Rails.root.join("app", "models", "{*/}")]
+
+
+config.assets.initialize_on_precompile = false
