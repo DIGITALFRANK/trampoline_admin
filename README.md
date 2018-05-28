@@ -1,23 +1,30 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Trampoline is a new era educational company that offers both in-person and online courses in Design Principle, Web & Software Development, Digital Marketing, and Blockchain Technology.
 
-Things you may want to cover:
+Trampoline offers it's students the opportunity to go from novice to job-ready professional by completing a 4 month bootcamp-style intensive in any of it's offered fields of study.
 
-* Ruby version
+While working on their official company website which will serve to market the company as well as offer it's online curriculum, Trampoline's owners approached me to build their administrative WebApp, whose function is to manage all things administrative as related to the company, the curriculums, company staff, instructors, and most importantly it's students and applicants 
 
-* System dependencies
 
-* Configuration
 
-* Database creation
+Features of the WebApp include:
 
-* Database initialization
+* Authorized access for company staff, instructors, students, and applicants
 
-* How to run the test suite
+* The ability for company staff to create new courses and edit curriculums, and manage course cohorts
 
-* Services (job queues, cache servers, search engines, etc.)
+* Student (client) data organization and filing [ student payments & financial aid ]
+
+* The ability for company success coaches to track students performances based on intructor input
+
+* Instructor application and filing
+
+* Student application and filing
+
+* 
+
+* 
 
 * Deployment instructions
 

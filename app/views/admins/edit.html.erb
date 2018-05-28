@@ -1,5 +1,5 @@
 
-<h1>edit info for Admin  <span class="admin_name"><%= @admin.first_name + " " + @admin.last_name %></span> </h1>
+<h1>edit info for Staff Member  <span class="admin_name"><%= @admin.first_name + " " + @admin.last_name %></span> </h1>
 
 <%= bootstrap_form_for(@admin) do |f| %>
     <%= f.text_field :img_url, label: "profile img url" %>
@@ -12,13 +12,13 @@
     <%= f.number_field :salary, label: "salary" %>
 
     <%= f.email_field :email %>
-    <%= f.password_field :password %>
+    <%# f.password_field :password %>
 
-    <%= f.submit "update admin info", class: "btn create_btn"%>
+    <%= f.submit "update staff member's info", class: "btn create_btn" %>
     </br>
     </br>
 
-    <a href="/admins/new"><button class="btn btn-primary add_ppl_btn">create new Admin</button></a>
+    <a href="/admins/new"><button class="btn btn-primary add_ppl_btn">create new staff member</button></a>
 
     </br>
     </br>
@@ -26,6 +26,6 @@
 
 <div class="delete_ppl">
 <%= form_tag("/admins/#{params[:id]}", method: "delete") do %>
-<%= submit_tag("delete this Admin", class: "btn btn-danger delete_ppl_btn") %>
+    <%= submit_tag("delete this staff member", class: "btn btn-danger delete_ppl_btn") %>
 <% end %>
 </div>

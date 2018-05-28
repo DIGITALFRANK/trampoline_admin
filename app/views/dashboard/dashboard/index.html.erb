@@ -1,5 +1,5 @@
 
-<%# <h6>your trampoline dashboard</h6> %>
+<%# <h6> dashboard </h6> %>
 
 <% if admin_signed_in? %>
     <div class="dashboard">
@@ -9,14 +9,15 @@
         <div class="dashboard_box courses_box">
             <a class="dashboard_resource" href="/courses"><div>Courses</div></a>
             <a class="create_new" href="/courses/new"><div>+</div></a>
+            <%# link_to '+', new_course_path, class: 'create_new' %>
         </div>
         <div class="dashboard_box cohorts_box">
             <a class="dashboard_resource" href="/cohorts"><div>Cohorts</div></a>
             <a class="create_new" href="/cohorts/new"><div>+</div></a>
         </div>
         <div class="dashboard_box admins_box">
-            <a class="dashboard_resource" href="/admins"><div>Admins</div></a>
-            <a class="create_new" href="admins/new"><div>+</div></a>
+            <a class="dashboard_resource" href="/admins"><div>Trampoline Staff</div></a>
+            <a class="create_new" href="/admins/new"><div>+</div></a>
         </div>
         <div class="dashboard_box instructors_box">
             <a class="dashboard_resource" href="/instructors"><div>Instructors</div></a>
@@ -26,29 +27,60 @@
             <a class="dashboard_resource" href="/students"><div>Students</div></a>
             <a class="create_new" href="/students/new"><div>+</div></a>
         </div>
-        <div class="dashboard_box student_applicants_box">
+        <%# <div class="dashboard_box student_applicants_box">
             <a class="dashboard_resource" href="/student_applicants"><div>Student Applicants</div></a>
         </div>
         <div class="dashboard_box instructor_applicants_box">
             <a class="dashboard_resource" href="/instructor_applicants"><div>Instructor Applicants</div></a>
-        </div>
+        </div> %>
     </div>
 <% end %>
 
 <% if instructor_signed_in? %>
     <div class="dashboard">
-
+        <div class="dashboard_box courses_box">
+            <a class="dashboard_resource" href="/courses"><div>Courses</div></a>
+        </div>
+        <div class="dashboard_box cohorts_box">
+            <a class="dashboard_resource" href="/cohorts"><div>Cohorts</div></a>
+        </div>
+        <div class="dashboard_box admins_box">
+            <a class="dashboard_resource" href="/admins"><div>Trampoline Staff</div></a>
+        </div>
+        <div class="dashboard_box students_box">
+            <a class="dashboard_resource" href="/students"><div>Your Students</div></a>
+        </div>
+        <div class="dashboard_box instructors_box">
+            <a class="dashboard_resource" href="/instructors"><div>Instructors</div></a>
+        </div>
     </div>
 <% end %>
 
 <% if student_signed_in? %>
-    <p>I'm a Student</p>
+    <div class="dashboard">
+        <div class="dashboard_box courses_box">
+            <a class="dashboard_resource" href="/courses"><div>Courses</div></a>
+        </div>
+        <div class="dashboard_box cohorts_box">
+            <a class="dashboard_resource" href="/cohorts"><div>Your Cohorts</div></a>
+        </div>
+        <div class="dashboard_box admins_box">
+            <a class="dashboard_resource" href="/admins"><div>Trampoline Staff</div></a>
+        </div>
+        <div class="dashboard_box instructors_box">
+            <a class="dashboard_resource" href="/instructors"><div>Instructors</div></a>
+        </div>
+    </div>
 <% end %>
 
 <% if instructor_applicant_signed_in? %>
-    <p>I'm an InstructorApplicant</p>
+    <div class="dashboard_box applications_box">
+        <a class="dashboard_resource" href="#"><div>Your Application</div></a>
+    </div>
 <% end %>
 
 <% if student_applicant_signed_in? %>
-    <p>I'm a StudentApplicant</p>
+    <div class="dashboard_box applications_box">
+        <a class="dashboard_resource" href="#"><div>Your Application</div></a>
+    </div>
 <% end %>
