@@ -1,9 +1,9 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
-  # :timeoutable and :omniauthable
+  # :timeoutable, :omniauthable, and :confirmable, 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
-         :confirmable, :lockable
+         :lockable
 
   TYPES = %w( Admin Instructor Student InstructorApplicant StudentApplicant )
   # before_save :set_type
