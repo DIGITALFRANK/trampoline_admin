@@ -1,15 +1,46 @@
-<h1>Admins#index</h1>
-<p>Find me in app/views/admins/index.html.erb</p>
+<h1>Trampoline Staff</h1>
 
 </br>
 </br>
 </br>
 
-<ul class="admins_list">
+
+<table class="table admins_table">
+  <thead>
+    <tr class="table_head">
+      <th scope="col">#</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Position</th>
+      <th scope="col">Email</th>
+    </tr>
+  </thead>
+  <tbody>
     <%  @admins.each do |admin|  %>
-        <li> 
-            <div class="name"><%=  admin.first_name + " " + admin.last_name  %> </div>
-            <div class="email"><a href="mailto:<%=  admin.email  %>"><%=  admin.email  %></a></div>
-        </li>
+        <tr class="student">
+            <th scope="row"><%= @i %></th>
+            <td><%= admin.first_name %></td>
+            <td><%= admin.last_name %></td>
+            <td><%= admin.position %></td>
+            <td><a href="mailto: <%= admin.email %>"><%= admin.email %></a></td>
+            <% if admin_signed_in? %>
+                <td>
+                    <a href="/admins/<%= admin.id %>/edit">
+                        <button class="btn btn-sm btn-outline-primary">
+                            edit
+                        </button>
+                    </a>
+                </td>
+                <td>
+                
+
+                    <%= form_tag("/admins/#{admin.id}", method: "delete", remote: true, confirm: "are you sure") do %>
+                        <%= submit_tag("delete", class: "btn btn-sm btn-outline-danger") %>
+                    <% end %>
+                </td>
+            <% end %>
+        </tr>
+        <% @i += 1 %>
     <% end %>
-</ul>
+  </tbody>
+</table>

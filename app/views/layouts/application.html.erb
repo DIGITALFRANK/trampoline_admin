@@ -5,6 +5,9 @@
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
 
+  <%# google fonts%>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400" rel="stylesheet">
+
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
@@ -32,36 +35,31 @@
             <ul class="dropdown-menu" role="menu" aria-labelledby="userDropdown">
                 <% if current_user.type == "Admin" then %>
                   <li><%= link_to 'Dashboard', dashboard_root_path, :class => 'nav-link' %></li>
-                  <li><p> > Admin dashboard</p></li>
-                  <li><p> > Admin profile</p></li>
+                  <li><p><%= link_to 'Profile', "/admins/#{current_user.id}", :class => 'nav-link' %></p></li>
                   <div class="dropdown-divider"></div>
                   <li><%= link_to 'Log out', destroy_admin_session_path, method: :delete, :class => 'nav-link' %></li>
                 <% end %>
                 <% if current_user.type == "Instructor" then %>
                   <li><%= link_to 'Dashboard', dashboard_root_path, :class => 'nav-link' %></li>
-                  <li><p> > Instructor dashboard</p></li>
-                  <li><p> > Instructor profile</p></li>
+                  <li><p><%= link_to 'Profile', "/instructors/#{current_user.id}", :class => 'nav-link' %></p></li>
                   <div class="dropdown-divider"></div>
                   <li><%= link_to 'Log out', destroy_instructor_session_path, method: :delete, :class => 'nav-link' %></li>
                 <% end %>
                 <% if current_user.type == "Student" then %>
                   <li><%= link_to 'Dashboard', dashboard_root_path, :class => 'nav-link' %></li>
-                  <li><p> > Student dashboard</p></li>
-                  <li><p> > Student profile</p></li>
+                  <li><p><%= link_to 'Profile', "/students/#{current_user.id}", :class => 'nav-link' %></p></li>
                   <div class="dropdown-divider"></div>
                   <li><%= link_to 'Log out', destroy_student_session_path, method: :delete, :class => 'nav-link' %></li>
                 <% end %>
                 <% if current_user.type == "InstructorApplicant" then %>
                   <li><%= link_to 'Dashboard', dashboard_root_path, :class => 'nav-link' %></li>
-                  <li><p> > InstructorApplicant dashboard</p></li>
-                  <li><p> > InstructorApplicantprofile</p></li>
+                  <li><p><%= link_to 'Profile', "/instructor_applicants/#{current_user.id}", :class => 'nav-link' %></p></li>
                   <div class="dropdown-divider"></div>
                   <li><%= link_to 'Log out', destroy_instructor_applicant_session_path, method: :delete, :class => 'nav-link' %></li>
                 <% end %>
                 <% if current_user.type == "StudentApplicant" then %>
                   <li><%= link_to 'Dashboard', dashboard_root_path, :class => 'nav-link' %></li>
-                  <li><p> > StudentApplicant dashboard</p></li>
-                  <li><p> > StudentApplicantprofile</p></li>
+                  <li><p><%= link_to 'Profile', "/student_applicants/#{current_user.id}", :class => 'nav-link' %></p></li>
                   <div class="dropdown-divider"></div>
                   <li><%= link_to 'Log out', destroy_student_applicant_session_path, method: :delete, :class => 'nav-link' %></li>
                 <% end %>
@@ -99,9 +97,9 @@
                 start new application as
               </a>
               <div class="dropdown-menu" aria-labelledby="applyDropdown">
-                <a class="dropdown-item" href="#">Student</a>
+                <%= link_to 'Student', new_student_applicant_registration_path, class: 'dropdown-item' %>
                 <div class="dropdown-divider"></div>
-                <%= link_to 'Instructor', new_admin_registration_path, class: 'dropdown-item' %>
+                <%= link_to 'Instructor', new_instructor_applicant_registration_path, class: 'dropdown-item' %>
               </div>
             </li>
           </ul>

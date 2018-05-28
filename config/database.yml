@@ -80,6 +80,7 @@ test:
 #
 production:
   <<: *default
+  adapter: postgresql
   database: trampoline_admin_production
   username: trampoline_admin
   password: <%= ENV['TRAMPOLINE_ADMIN_DATABASE_PASSWORD'] %>

@@ -14,9 +14,16 @@ class StudentsController < ApplicationController
   end
 
   def create
-    @student = Student.create(student_params)
+    @student = Student.new(student_params)
+    @student.save
+    # sign_out(@student)
     redirect_to "/students/#{@student.id}/"
   end
+
+  # def after_sign_up_path_for(resource)
+  #   super(resource)
+  #   sign_out(resource_name)
+  # end
 
   def edit
     @student = Student.find(params[:id])
@@ -34,12 +41,12 @@ class StudentsController < ApplicationController
     redirect_to "/students"
   end
 
-
+ 
 
 
   private
 
   def student_params
-    params.require(:student).permit(:img_url, :first_name, :last_name, :DOB, :edu_level, :email, :password, :admin_id)
+    params.require(:student).permit(:img_url, :first_name, :last_name, :DOB, :edu_level, :email, :admin_id)
   end
 end

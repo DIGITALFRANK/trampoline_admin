@@ -8,6 +8,7 @@ class AdminsController < ApplicationController
 
   def index
     @admins = Admin.all
+    @i = 1
   end
 
   def show

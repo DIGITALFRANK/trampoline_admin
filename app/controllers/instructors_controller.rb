@@ -5,6 +5,7 @@ class InstructorsController < ApplicationController
 
   def index
     @instructors = Instructor.all
+    @i = 1
   end
 
   def show
@@ -26,9 +27,9 @@ class InstructorsController < ApplicationController
   end
 
   def update
-    @instructor = Instructor.find(params[id])
+    @instructor = Instructor.find(params[:id])
     @instructor.update(user_params)
-    redirect_to "/instructors/#{params[id]}"
+    redirect_to "/instructors/#{params[:id]}"
   end
 
   def destroy
