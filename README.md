@@ -1,4 +1,4 @@
-# README
+# TRAMPOLINE ADMIN
 
 Trampoline is a new era educational company that offers both in-person and online courses in Design Principle, Web & Software Development, Digital Marketing, and Blockchain Technology.
 
@@ -22,10 +22,6 @@ Features of the WebApp include:
 
 * Student application and filing
 
-* 
-
-* 
-
-* Deployment instructions
-
 * ...
+
+* LOGIN WITH => Email: jason.bourne@thetrampoline.com / Password: bournesoldier1
