@@ -9,7 +9,7 @@
 
 
 ### admins
-Admin.create(img_url: "app/assets/images/profiles/...", first_name: "Jason", last_name: "Bourne", DOB: Date.parse("2295-12-31"), edu_level: "PHD", position: "enforcer", hire_date: Date.parse("2018-2-26"), salary: 500000, email: "jason.bourne@thetrampoline.com", password: "bournesoldier1")
+Admin.create(img_url: "app/assets/images/profiles/...", first_name: "Jason", last_name: "Bourne", DOB: Date.parse("1978-12-31"), edu_level: "PHD", position: "enforcer", hire_date: Date.parse("2018-2-26"), salary: 500000, email: "jason.bourne@thetrampoline.com", password: "bournesoldier1")
 Admin.create(img_url: "app/assets/images/profiles/...", first_name: "James", last_name: "Bond", DOB: Date.parse("1991-4-21"), edu_level: "Masters", position: "enforcer", hire_date: Date.parse("2018-4-10"), salary: 700000, email: "james.bond@thetrampoline.com", password: "wordisbond")
 
 

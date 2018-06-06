@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 2018_05_14_123651) do
   end
 
   create_table "cohorts", force: :cascade do |t|
+    t.boolean "fulltime"
     t.string "name"
     t.date "start_date"
     t.date "end_date"
