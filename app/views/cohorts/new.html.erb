@@ -1,6 +1,6 @@
 <h1>create a new Cohort</h1>
 
-<%= bootstrap_form_for(@cohort) do |f| %>
+<%= bootstrap_form_for(@cohort, method: "post") do |f| %>
     <%= f.form_group :fulltime, label: { text: "fulltime?" } do %>
         <%= f.radio_button :fulltime, true, label: "true" %>
         <%= f.radio_button :fulltime, false, label: "false" %>
