@@ -7,6 +7,7 @@ ruby '2.5.1'
 gem 'rails', '~> 5.2.0'
 # Use postgresql as the database for Active Record
 # gem 'pg', '>= 0.18', '< 2.0'
+
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
@@ -15,24 +16,6 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
-
-
-
-# Devise gem for Authentication
-gem 'devise'
-# bootstrap sass - please find out more about what this does
-# gem 'bootstrap-sass'
-# jQuery
-gem 'jquery-rails'
-# jQuery turbo links
-gem 'jquery-turbolinks'
-# bootstrap
-gem 'bootstrap', '~> 4.1.1'
-# bootstrap form helper
-gem "bootstrap_form", git: "https://github.com/bootstrap-ruby/bootstrap_form.git", branch: "master"
-
-
-
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
@@ -80,7 +63,34 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 
-# gem 'pg', '>= 0.18', '< 2.0', group: :production
+
+
+
+
+
+
+
+# --------------------- MY GEMS -----------------------
+
+
+# Devise gem for Authentication
+gem 'devise'
+# bootstrap sass - please find out more about what this does
+# gem 'bootstrap-sass'
+# jQuery
+gem 'jquery-rails'
+# jQuery turbo links
+gem 'jquery-turbolinks'
+# bootstrap
+gem 'bootstrap', '~> 4.1.1'
+# bootstrap form helper
+gem "bootstrap_form", git: "https://github.com/bootstrap-ruby/bootstrap_form.git", branch: "master"
+
+
+
+# --------------------- PRODUCTION -----------------------
+
+
 gem 'rails_12factor', group: :production
 
 group :production do

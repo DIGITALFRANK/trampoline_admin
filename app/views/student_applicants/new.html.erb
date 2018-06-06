@@ -3,7 +3,7 @@
 <%= bootstrap_form_for(@student_applicant) do |f| %>
     <%= f.text_field :first_name, label: "first name" %>
     <%= f.text_field :last_name, label: "last name" %>
-    <%= f.date_field :DOB, label: "date of birth" %>
+    <%= f.date_field :DOB, selected: Date.today, min: 150.years.ago, label: "date of birth" %>
     <%= f.text_field :edu_level, label: "education level" %>
 
     <%= f.email_field :email %>
