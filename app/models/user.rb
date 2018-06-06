@@ -6,6 +6,10 @@ class User < ApplicationRecord
          :lockable
 
   TYPES = %w( Admin Instructor Student InstructorApplicant StudentApplicant )
+
+  validates :salary, numericality: { greater_than: 0 }
+  validates :DOB, numericality: { greater_than: 0 }
+
   # before_save :set_type
   # validates :type, presence: true, :inclusion => { :in => TYPES }
 

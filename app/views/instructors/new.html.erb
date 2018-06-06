@@ -4,12 +4,12 @@
     <%= f.text_field :img_url, label: "profile img url" %>
     <%= f.text_field :first_name, label: "first name" %>
     <%= f.text_field :last_name, label: "last name" %>
-    <%= f.date_field :DOB, label: "date of birth" %>
+    <%= f.date_field :DOB, selected: Date.today, min: 150.years.ago, label: "date of birth" %>
     <%= f.text_field :edu_level, label: "education level" %>
     <%= f.text_field :expertise, label: "expertise" %>
     <%= f.text_field :position, label: "position" %>
     <%= f.date_field :hire_date, label: "hire date" %>
-    <%= f.number_field :salary, label: "salary" %>
+    <%= f.number_field :salary, min: 0, label: "salary" %>
 
     <%= f.email_field :email %>
     <%= f.password_field :password %>
